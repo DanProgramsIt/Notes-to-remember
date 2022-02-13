@@ -34,6 +34,8 @@ Please visit my Heroku for the app at:  [Notes to remember](https://notestoremem
 ## Screenshots
 
 View a demonstration of the application: [video](https://drive.google.com/file/d/14d_uskaSrLH1HjBIBS6yPgbl8re0DF-p/view)
+![Notes to remember pic 2](/public/assets/images/Note%20taker%20begining.jpg)
+
 ![Notes to remember pic](/public/assets/images/Notes%20saved.jpg)
 
 
