@@ -58,4 +58,4 @@ node server.js
 
 ## Questions
 
-For any questions about this repo, Please contact me at [soliddan211@gmail.com](mailto:soliddan211@gmail.com). View more of my work in GitHub at [Daniel Mendez](https://github.com/DanProgramsIt) 
+For any questions about this repo, Please contact me at [soliddan211@gmail.com](mailto:soliddan211@gmail.com). View more of my work in GitHub at [https://github.com/DanProgramsIt](https://github.com/DanProgramsIt) 
