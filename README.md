@@ -28,13 +28,13 @@ This application helps the user remember things by writing notes. you can also s
 
 ## Deployed Link
 
-Please visit my Heroku for the app at:  [Notes to remember]()
+Please visit my Heroku for the app at:  [Notes to remember](https://notestoremember.herokuapp.com/)
 
 
 ## Screenshots
 
 View a demonstration of the application: [video](https://drive.google.com/file/d/14d_uskaSrLH1HjBIBS6yPgbl8re0DF-p/view)
-![Notes to remember pic](\public\assets\images\Notes%saved.jpg)
+![Notes to remember pic](/public/assets/images/Notes%20saved.jpg)
 
 
 
