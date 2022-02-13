@@ -23,18 +23,18 @@ module.exports = (app) => {
     });
   });
 
-  app.delete("/api/notes", (req, res) => {
+  app.delete("/api/notes/:id", (req, res) => {
     const id = req.params.id;
-    fs.readFile("./db/db.json", (err, data) => {
-      if (err) throw err;
-      const notes = JSON.parse(data);
-      let newNotesArr = notes.filter((note) => {
-        return id !== note.id;
-      });
-      fs.writeFile("./db/db.json", JSON.stringify(newNotesArr), (err) => {
+    fs.readFile('./db/db.json', (err, data) => {
         if (err) throw err;
-        res.json(newNotesArr);
-      });
+        const notes = JSON.parse(data);
+        let newNotesArr = notes.filter((note) => {
+            return id !== note.id;
+        })
+        fs.writeFile('./db/db.json', JSON.stringify(newNotesArr), (err) => {
+            if (err) throw err;
+            res.json(newNotesArr);
+        });
     });
-  });
-};
+});
+}

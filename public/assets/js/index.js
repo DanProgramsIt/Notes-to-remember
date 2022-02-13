@@ -4,17 +4,6 @@ const $saveNoteBtn = $(".save-note");
 const $newNoteBtn = $(".new-note");
 const $noteList = $(".list-container .list-group");
 
-// // Show an element
-// const show = elem => {
-//   elem.style.display = 'inline';
-// };
-
-// // Hide an element
-// const hide = elem => {
-//   elem.style.display = 'none';
-// };
-
-// activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
 const getNotes = () => {
@@ -34,7 +23,7 @@ const saveNote = (note) => {
 
 const deleteNote = (id) => {
   return $.ajax({
-    url: "/api/notes" + id,
+    url: "api/notes/" + id,
     method: "DELETE",
   });
 };
@@ -48,18 +37,19 @@ const renderActiveNote = () => {
     $noteTitle.val(activeNote.title);
     $noteText.val(activeNote.text);
   } else {
-    $noteTitle.attr("readonly");
-    $noteText.attr("readonly");
+    $noteTitle.attr("readonly", false);
+    $noteText.attr("readonly", false);
     $noteTitle.val("");
     $noteText.val("");
   }
 };
 
-const handleNoteSave = () => {
+const handleNoteSave = function () {
   const newNote = {
     title: $noteTitle.val(),
     text: $noteText.val(),
   };
+
   saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
@@ -77,7 +67,7 @@ const handleNoteDelete = function (event) {
     activeNote = {};
   }
 
-  deleteNote(not.id).then(() => {
+  deleteNote(note.id).then(() => {
     getAndRenderNotes();
     renderActiveNote();
   });
@@ -95,7 +85,7 @@ const handleNewNoteView = function () {
   renderActiveNote();
 };
 
-const handleRenderSaveBtn = () => {
+const handleRenderSaveBtn = function () {
   if (!$noteTitle.val().trim() || !$noteText.val().trim()) {
     $saveNoteBtn.hide();
   } else {
@@ -110,20 +100,17 @@ const renderNoteList = (notes) => {
   const noteListItems = [];
 
   // Returns HTML element with or without a delete button
-  const createLi = (text, withDeleteButton = true) => {
-    const $li = $('<li class="list-group-item">');
-
+  const create$li = (text, withDeleteButton = true) => {
+    const $li = $("<li class='list-group-item'>");
     const $span = $("<span>").text(text);
     $li.append($span);
 
     if (withDeleteButton) {
-      const delBtn = $(
-        '<i class="fas fa-trash-alt float-right text-danger delete-note">'
+      const $delBtn = $(
+        "<i class='fas fa-trash-alt float-right text-danger delete-note'>"
       );
-
-      $li.append(delBtn);
+      $li.append($delBtn);
     }
-
     return $li;
   };
 
@@ -133,7 +120,6 @@ const renderNoteList = (notes) => {
 
   notes.forEach((note) => {
     const $li = create$li(note.title).data(note);
-
     noteListItems.push($li);
   });
 
