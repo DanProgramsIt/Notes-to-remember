@@ -28,7 +28,7 @@ This application helps the user remember things by writing notes. you can also s
 
 ## Deployed Link
 
-Please visit my Heroku for the app at:  [Notes to remember]()
+Please visit my Heroku for the app at:  [Notes to remember](https://notestoremember.herokuapp.com/)
 
 
 ## Screenshots
