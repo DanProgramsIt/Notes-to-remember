@@ -34,7 +34,7 @@ Please visit my Heroku for the app at:  [Notes to remember]()
 ## Screenshots
 
 View a demonstration of the application: [video](https://drive.google.com/file/d/14d_uskaSrLH1HjBIBS6yPgbl8re0DF-p/view)
-![Notes to remember pic](\public\assets\images\Notes%saved.jpg)
+![Notes to remember pic](/public/assets/images/Notes%20saved.jpg)
 
 
 
